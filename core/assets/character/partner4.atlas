@@ -1,0 +1,160 @@
+
+partner4.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+partner4_atk
+  rotate: false
+  xy: 394, 101
+  size: 168, 153
+  orig: 211, 157
+  offset: 31, 4
+  index: 3
+partner4_atk
+  rotate: false
+  xy: 882, 111
+  size: 143, 143
+  orig: 211, 158
+  offset: 0, 1
+  index: 1
+partner4_atk
+  rotate: false
+  xy: 1441, 161
+  size: 99, 93
+  orig: 189, 158
+  offset: 20, 31
+  index: 2
+partner4_jump
+  rotate: false
+  xy: 1542, 166
+  size: 58, 88
+  orig: 59, 88
+  offset: 0, 0
+  index: 1
+partner4_jump
+  rotate: false
+  xy: 1602, 167
+  size: 58, 87
+  orig: 59, 88
+  offset: 0, 1
+  index: 2
+partner4_satk
+  rotate: false
+  xy: 1166, 172
+  size: 165, 82
+  orig: 166, 84
+  offset: 0, 2
+  index: 2
+partner4_satk
+  rotate: false
+  xy: 1166, 172
+  size: 165, 82
+  orig: 166, 82
+  offset: 0, 0
+  index: 3
+partner4_satk
+  rotate: false
+  xy: 1333, 171
+  size: 106, 83
+  orig: 166, 85
+  offset: 1, 2
+  index: 1
+partner4_satk2
+  rotate: false
+  xy: 2, 79
+  size: 199, 175
+  orig: 213, 204
+  offset: 14, 10
+  index: 3
+partner4_satk2
+  rotate: false
+  xy: 203, 108
+  size: 189, 146
+  orig: 211, 177
+  offset: 10, 29
+  index: 6
+partner4_satk2
+  rotate: false
+  xy: 564, 126
+  size: 167, 128
+  orig: 218, 157
+  offset: 6, 16
+  index: 2
+partner4_satk2
+  rotate: false
+  xy: 733, 126
+  size: 147, 128
+  orig: 211, 164
+  offset: 0, 4
+  index: 5
+partner4_satk2
+  rotate: false
+  xy: 1027, 129
+  size: 137, 125
+  orig: 206, 157
+  offset: 13, 16
+  index: 1
+partner4_satk2
+  rotate: false
+  xy: 1027, 2
+  size: 130, 125
+  orig: 213, 137
+  offset: 13, 5
+  index: 4
+partner4_stand
+  rotate: false
+  xy: 1782, 172
+  size: 58, 82
+  orig: 59, 83
+  offset: 0, 1
+  index: 3
+partner4_stand
+  rotate: false
+  xy: 1962, 173
+  size: 58, 81
+  orig: 59, 83
+  offset: 0, 1
+  index: 2
+partner4_stand
+  rotate: false
+  xy: 1962, 173
+  size: 58, 81
+  orig: 59, 83
+  offset: 0, 1
+  index: 4
+partner4_stand
+  rotate: false
+  xy: 1166, 90
+  size: 58, 80
+  orig: 59, 83
+  offset: 0, 1
+  index: 1
+partner4_walk
+  rotate: false
+  xy: 1662, 171
+  size: 58, 83
+  orig: 59, 83
+  offset: 0, 0
+  index: 1
+partner4_walk
+  rotate: false
+  xy: 1722, 171
+  size: 58, 83
+  orig: 59, 83
+  offset: 0, 0
+  index: 3
+partner4_walk
+  rotate: false
+  xy: 1842, 172
+  size: 58, 82
+  orig: 59, 83
+  offset: 0, 0
+  index: 2
+partner4_walk
+  rotate: false
+  xy: 1902, 172
+  size: 58, 82
+  orig: 59, 83
+  offset: 0, 0
+  index: 4

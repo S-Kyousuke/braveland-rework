@@ -1,0 +1,118 @@
+
+partner3.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+partner3_atk
+  rotate: false
+  xy: 2, 111
+  size: 233, 143
+  orig: 241, 150
+  offset: 0, 1
+  index: 3
+partner3_atk
+  rotate: false
+  xy: 237, 113
+  size: 208, 141
+  orig: 227, 145
+  offset: 7, 1
+  index: 2
+partner3_atk
+  rotate: false
+  xy: 447, 126
+  size: 140, 128
+  orig: 241, 139
+  offset: 66, 2
+  index: 1
+partner3_jump
+  rotate: false
+  xy: 2, 2
+  size: 89, 107
+  orig: 90, 107
+  offset: 0, 0
+  index: 2
+partner3_jump
+  rotate: false
+  xy: 93, 2
+  size: 87, 107
+  orig: 90, 107
+  offset: 0, 0
+  index: 1
+partner3_satk
+  rotate: false
+  xy: 589, 151
+  size: 102, 103
+  orig: 206, 107
+  offset: 0, 4
+  index: 3
+partner3_satk
+  rotate: false
+  xy: 693, 154
+  size: 102, 100
+  orig: 109, 104
+  offset: 6, 3
+  index: 2
+partner3_satk
+  rotate: false
+  xy: 182, 5
+  size: 82, 104
+  orig: 97, 104
+  offset: 1, 0
+  index: 1
+partner3_stand
+  rotate: false
+  xy: 797, 166
+  size: 97, 88
+  orig: 97, 88
+  offset: 0, 0
+  index: 1
+partner3_stand
+  rotate: false
+  xy: 896, 166
+  size: 96, 88
+  orig: 96, 88
+  offset: 0, 0
+  index: 2
+partner3_stand
+  rotate: false
+  xy: 896, 166
+  size: 96, 88
+  orig: 96, 88
+  offset: 0, 0
+  index: 4
+partner3_stand
+  rotate: false
+  xy: 266, 23
+  size: 96, 88
+  orig: 96, 88
+  offset: 0, 0
+  index: 3
+partner3_walk
+  rotate: false
+  xy: 364, 25
+  size: 97, 86
+  orig: 99, 87
+  offset: 0, 1
+  index: 1
+partner3_walk
+  rotate: false
+  xy: 463, 38
+  size: 97, 86
+  orig: 99, 88
+  offset: 0, 1
+  index: 3
+partner3_walk
+  rotate: false
+  xy: 589, 63
+  size: 94, 86
+  orig: 99, 88
+  offset: 4, 1
+  index: 2
+partner3_walk
+  rotate: false
+  xy: 797, 79
+  size: 93, 85
+  orig: 99, 87
+  offset: 3, 1
+  index: 4

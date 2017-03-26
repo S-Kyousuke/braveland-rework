@@ -1,0 +1,97 @@
+
+monster1.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster1_atk
+  rotate: false
+  xy: 2, 19
+  size: 99, 84
+  orig: 99, 84
+  offset: 0, 0
+  index: 2
+monster1_atk
+  rotate: false
+  xy: 275, 18
+  size: 83, 85
+  orig: 83, 85
+  offset: 0, 0
+  index: 3
+monster1_atk
+  rotate: false
+  xy: 360, 17
+  size: 82, 86
+  orig: 82, 86
+  offset: 0, 0
+  index: 5
+monster1_stand
+  rotate: false
+  xy: 360, 17
+  size: 82, 86
+  orig: 82, 86
+  offset: 0, 0
+  index: 1
+monster1_atk
+  rotate: false
+  xy: 865, 2
+  size: 74, 101
+  orig: 74, 101
+  offset: 0, 0
+  index: 1
+monster1_atk
+  rotate: false
+  xy: 941, 17
+  size: 74, 86
+  orig: 74, 86
+  offset: 0, 0
+  index: 4
+monster1_stand
+  rotate: false
+  xy: 612, 18
+  size: 82, 85
+  orig: 82, 85
+  offset: 0, 0
+  index: 2
+monster1_stand
+  rotate: false
+  xy: 696, 19
+  size: 83, 84
+  orig: 83, 84
+  offset: 0, 0
+  index: 3
+monster1_stand
+  rotate: false
+  xy: 781, 18
+  size: 82, 85
+  orig: 82, 85
+  offset: 0, 0
+  index: 4
+monster1_walk
+  rotate: false
+  xy: 103, 15
+  size: 84, 88
+  orig: 84, 88
+  offset: 0, 0
+  index: 2
+monster1_walk
+  rotate: false
+  xy: 189, 15
+  size: 84, 88
+  orig: 84, 88
+  offset: 0, 0
+  index: 4
+monster1_walk
+  rotate: false
+  xy: 444, 17
+  size: 82, 86
+  orig: 82, 86
+  offset: 0, 0
+  index: 1
+monster1_walk
+  rotate: false
+  xy: 528, 17
+  size: 82, 86
+  orig: 82, 86
+  offset: 0, 0
+  index: 3
