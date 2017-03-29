@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import th.skyousuke.braveland.AbstractActionState;
 import th.skyousuke.braveland.AbstractCharacter;
 import th.skyousuke.braveland.Assets;
+import th.skyousuke.braveland.HotBox;
 import th.skyousuke.braveland.KeyFrameData;
 import th.skyousuke.braveland.ViewDirection;
 
@@ -53,6 +54,32 @@ public class PlayerSpecialAttack extends AbstractActionState {
     }
 
     @Override
+    public void enter(AbstractCharacter player) {
+        super.enter(player);
+        KeyFrameData[] keyFramesData = animation.getKeyFrames();
+
+        HotBox hotBoxFrame2 = new HotBox(15, 3, 12, 25, 100, 1);
+        hotBoxFrame2.setKnockBackSpeed(350f);
+        hotBoxFrame2.setKnockBackDirection(ViewDirection.RIGHT);
+        hotBoxFrame2.getTargets().addAll(player.getEnemies());
+
+        HotBox hotBoxFrame3 = new HotBox(25, -20, 57, 100, 120, 1);
+        hotBoxFrame3.setKnockBackSpeed(600f);
+        hotBoxFrame3.setKnockBackDirection(ViewDirection.RIGHT);
+        hotBoxFrame3.getTargets().addAll(player.getEnemies());
+
+        if (player.getViewDirection() == ViewDirection.RIGHT) {
+            keyFramesData[2].hotBoxes.add(hotBoxFrame2);
+            keyFramesData[3].hotBoxes.add(hotBoxFrame3);
+        } else {
+            hotBoxFrame2.flipRightToLeft(FLIP_X_OFFSET);
+            hotBoxFrame3.flipRightToLeft(FLIP_X_OFFSET);
+            keyFramesData[2].hotBoxes.add(hotBoxFrame2);
+            keyFramesData[3].hotBoxes.add(hotBoxFrame3);
+        }
+    }
+
+    @Override
     public void update(AbstractCharacter player) {
         if (animation.isAnimationFinished(player.getActionStateTime())) {
             player.getActionStateMachine().changeState(new PlayerStand());
@@ -64,6 +91,11 @@ public class PlayerSpecialAttack extends AbstractActionState {
             player.getVelocity().y = JUMP_SPEED;
         }
         currentKeyFrame = animation.getKeyFrames()[keyFrameIndex];
+
+        player.getHotBoxes().clear();
+        for (HotBox hotBox : currentKeyFrame.hotBoxes) {
+            player.getHotBoxes().add(hotBox);
+        }
     }
 
     @Override

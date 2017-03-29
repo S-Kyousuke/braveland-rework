@@ -3,6 +3,7 @@ package th.skyousuke.braveland.npc.monster;
 
 import th.skyousuke.braveland.npc.monster.state.Monster1Attack;
 import th.skyousuke.braveland.npc.monster.state.Monster1Stand;
+import th.skyousuke.braveland.npc.monster.state.Monster1Walk;
 
 public class Monster1 extends Monster {
 
@@ -18,5 +19,8 @@ public class Monster1 extends Monster {
         getActionStateMachine().changeState(new Monster1Attack());
     }
 
-
+    @Override
+    protected void changeStateDueToTakingDamage() {
+        getActionStateMachine().changeState(new Monster1Walk());
+    }
 }

@@ -4,6 +4,7 @@ import th.skyousuke.braveland.AbstractCharacter;
 import th.skyousuke.braveland.player.actionstate.PlayerAttack;
 import th.skyousuke.braveland.player.actionstate.PlayerSpecialAttack;
 import th.skyousuke.braveland.player.actionstate.PlayerStand;
+import th.skyousuke.braveland.player.actionstate.PlayerWalk;
 
 public class Player extends AbstractCharacter {
 
@@ -21,4 +22,14 @@ public class Player extends AbstractCharacter {
     public void specialAttack() {
         getActionStateMachine().changeState(new PlayerSpecialAttack());
     }
+
+    @Override
+    protected void changeStateDueToTakingDamage() {
+        getActionStateMachine().changeState(new PlayerWalk());
+    }
+    //    @Override
+//    public void takeDamage(float damage, float knockBackSpeed, ViewDirection knockBackDirection) {
+//        super.takeDamage(damage, knockBackSpeed, knockBackDirection);
+//        Gdx.app.log("takeDamage", "called");
+//    }
 }

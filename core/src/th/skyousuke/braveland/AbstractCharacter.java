@@ -17,14 +17,14 @@ public abstract class AbstractCharacter extends AbstractGameObject {
     private static final float MAX_JUMP_SPEED = 500f;
     private static final float JUMP_SPEED_COEFFICIENT = 1.73f;
 
-    private static final byte DEFAULT_LEVEL = 1;
-    private static final byte DEFAULT_EXPERIENCE = 1;
+    private static final int DEFAULT_LEVEL = 1;
+    private static final int DEFAULT_EXPERIENCE = 1;
     private static final float DEFAULT_HEALTH = 1000;
     private static final float DEFAULT_DAMAGE = 1;
     private static final float DEFAULT_ARMOR = 1;
     private static final float DEFAULT_MOVE_SPEED = 200;
     private static final float DEFAULT_ATTACK_SPEED = 1;
-    private static final byte DEFAULT_GAUGE = 0;
+    private static final int DEFAULT_GAUGE = 0;
 
     private Array<Rectangle> obstacleBoxes = new Array<Rectangle>();
 
@@ -36,18 +36,19 @@ public abstract class AbstractCharacter extends AbstractGameObject {
 
     protected boolean onGround;
 
-    protected byte level = DEFAULT_LEVEL;
+    protected int level = DEFAULT_LEVEL;
     protected int experience = DEFAULT_EXPERIENCE;
     protected float health = DEFAULT_HEALTH;
     protected float damage = DEFAULT_DAMAGE;
     protected float armor = DEFAULT_ARMOR;
     protected float movementSpeed = DEFAULT_MOVE_SPEED;
     protected float attackSpeed = DEFAULT_ATTACK_SPEED;
-    protected byte gauge = DEFAULT_GAUGE;
+    protected int gauge = DEFAULT_GAUGE;
 
     private boolean knockingBack;
-
     private boolean attacking;
+
+    private Array<AbstractCharacter> enemies = new Array<AbstractCharacter>();
 
     private StateMachine<AbstractCharacter, AbstractActionState> actionStateMachine
             = new DefaultStateMachine<AbstractCharacter, AbstractActionState>(this);
@@ -90,6 +91,8 @@ public abstract class AbstractCharacter extends AbstractGameObject {
         if (knockingBack && CompareUtils.equals(getVelocity().x, 0)) {
             knockingBack = false;
         }
+
+
     }
 
     @Override
@@ -199,8 +202,11 @@ public abstract class AbstractCharacter extends AbstractGameObject {
         } else if (knockBackDirection == ViewDirection.LEFT){
             getVelocity().x = -knockBackSpeed;
         }
+        changeStateDueToTakingDamage();
         knockingBack = true;
     }
+
+    protected abstract void changeStateDueToTakingDamage();
 
     public Rectangle getHitBox() {
         return hitBox;
@@ -226,8 +232,8 @@ public abstract class AbstractCharacter extends AbstractGameObject {
         return obstacleBoxes;
     }
 
-    public void setHotBoxes(Array<HotBox> hotBoxes) {
-        this.hotBoxes = hotBoxes;
+    public Array<HotBox> getHotBoxes() {
+        return hotBoxes;
     }
 
     public float getActionStateTime() {
@@ -242,7 +248,7 @@ public abstract class AbstractCharacter extends AbstractGameObject {
         return actionStateMachine;
     }
 
-    public byte getLevel() {
+    public int getLevel() {
         return level;
     }
 
@@ -266,7 +272,7 @@ public abstract class AbstractCharacter extends AbstractGameObject {
         return attackSpeed;
     }
 
-    public byte getGauge() {
+    public int getGauge() {
         return gauge;
     }
 
@@ -276,5 +282,9 @@ public abstract class AbstractCharacter extends AbstractGameObject {
 
     public void setAttacking(boolean attacking) {
         this.attacking = attacking;
+    }
+
+    public Array<AbstractCharacter> getEnemies() {
+        return enemies;
     }
 }

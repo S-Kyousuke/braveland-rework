@@ -4,6 +4,7 @@ package th.skyousuke.braveland.npc;
 import th.skyousuke.braveland.npc.partner.actionstate.Partner1Attack;
 import th.skyousuke.braveland.npc.partner.actionstate.Partner1SpecialAttack;
 import th.skyousuke.braveland.npc.partner.actionstate.Partner1Stand;
+import th.skyousuke.braveland.npc.partner.actionstate.Partner1Walk;
 
 public class Partner1 extends Partner {
 
@@ -24,5 +25,8 @@ public class Partner1 extends Partner {
         getActionStateMachine().changeState(new Partner1SpecialAttack());
     }
 
-
+    @Override
+    protected void changeStateDueToTakingDamage() {
+        getActionStateMachine().changeState(new Partner1Walk());
+    }
 }

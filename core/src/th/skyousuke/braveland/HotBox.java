@@ -3,12 +3,14 @@ package th.skyousuke.braveland;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 
 
 public class HotBox {
 
     private Rectangle box = new Rectangle();
+    private Array<AbstractCharacter> targets = new Array<AbstractCharacter>();
 
     private float relativeX;
     private float relativeY;
@@ -22,19 +24,23 @@ public class HotBox {
     private ObjectMap<AbstractCharacter, Integer> affectCounts = new ObjectMap<AbstractCharacter, Integer>();
 
     public HotBox(float relativeX, float relativeY, float width, float height,
-                  float initDamage, int initHit, float knockBackSpeed, ViewDirection knockBackDirection) {
+                  float initDamage, int initHit) {
         this.relativeX = relativeX;
         this.relativeY = relativeY;
-//        this.width = width;
-//        this.height = height;
 
         currentDamage = initDamage;
         remainingHit = initHit;
-        this.knockBackSpeed = knockBackSpeed;
-        this.knockBackDirection = knockBackDirection;
 
         box.width = width;
         box.height = height;
+    }
+
+    public void setKnockBackSpeed(float knockBackSpeed) {
+        this.knockBackSpeed = knockBackSpeed;
+    }
+
+    public void setKnockBackDirection(ViewDirection knockBackDirection) {
+        this.knockBackDirection = knockBackDirection;
     }
 
     public void damageTo(AbstractCharacter character, float damageDrop) {
@@ -53,8 +59,8 @@ public class HotBox {
             currentDamage = 0;
     }
 
-    public boolean overlaps(AbstractCharacter character) {
-        return box.overlaps(character.getHitBox());
+    public boolean canAffectOn(AbstractCharacter character) {
+        return targets.contains(character, true) && box.overlaps(character.getHitBox());
     }
 
     public void debug(ShapeRenderer shapeRenderer) {
@@ -69,5 +75,46 @@ public class HotBox {
     public void updateBoxPosition(float ownerX, float ownerY) {
         box.x =  relativeX + ownerX;
         box.y =  relativeY + ownerY;
+    }
+
+    public float getRelativeX() {
+        return relativeX;
+    }
+
+    public float getRelativeY() {
+        return relativeY;
+    }
+
+    public float getCurrentDamage() {
+        return currentDamage;
+    }
+
+    public int getRemainingHit() {
+        return remainingHit;
+    }
+
+    public float getKnockBackSpeed() {
+        return knockBackSpeed;
+    }
+
+    public ViewDirection getKnockBackDirection() {
+        return knockBackDirection;
+    }
+
+    public ObjectMap<AbstractCharacter, Integer> getAffectCounts() {
+        return affectCounts;
+    }
+
+    public void flipRightToLeft(float flipXOffset) {
+        relativeX =  flipXOffset - relativeX - box.width;
+        if (knockBackDirection == ViewDirection.LEFT) {
+            knockBackDirection = ViewDirection.RIGHT;
+        } else {
+            knockBackDirection = ViewDirection.LEFT;
+        }
+    }
+
+    public Array<AbstractCharacter> getTargets() {
+        return targets;
     }
 }

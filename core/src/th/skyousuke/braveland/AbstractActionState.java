@@ -19,7 +19,6 @@ public abstract class AbstractActionState implements State<AbstractCharacter> {
     public void enter(AbstractCharacter character) {
         character.setActionStateTime(0);
         currentKeyFrame = animation.getKeyFrame(0);
-        character.setHotBoxes(animation.getKeyFrame(0).hotBoxes);
     }
 
     @Override

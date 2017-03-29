@@ -6,14 +6,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
-import th.skyousuke.braveland.AbstractGameObject;
+import th.skyousuke.braveland.AbstractCharacter;
 import th.skyousuke.braveland.CameraHelper;
+import th.skyousuke.braveland.HotBox;
 import th.skyousuke.braveland.LevelChangeListener;
 import th.skyousuke.braveland.PlayerChangeListener;
 
 public abstract class AbstractLevel {
 
-    protected Array<AbstractGameObject> objects = new Array<AbstractGameObject>();
+    protected Array<AbstractCharacter> characters = new Array<AbstractCharacter>();
+    //protected Array<AbstractGameObject> objects = new Array<AbstractGameObject>();
 
     private static final int WALL_WIDTH = 200;
 
@@ -28,9 +30,20 @@ public abstract class AbstractLevel {
     private PlayerChangeListener playerListener;
     private LevelChangeListener levelListener;
 
+    protected Array<HotBox> hotBoxes = new Array<HotBox>();
+
     public void update(float delaTime) {
-        for (AbstractGameObject object : objects) {
-            object.update(delaTime);
+        // general system
+        for (AbstractCharacter character : characters) {
+            character.update(delaTime);
+        }
+        // hotbox collision check and response system
+        for (AbstractCharacter character : characters) {
+            for (HotBox hotBox : hotBoxes) {
+                if (hotBox.canAffectOn(character)) {
+                    hotBox.damageTo(character, 0);
+                }
+            }
         }
     }
 
@@ -44,8 +57,8 @@ public abstract class AbstractLevel {
 
     public void draw(SpriteBatch batch) {
         batch.draw(mapBackground, 0, 0);
-        for (AbstractGameObject object : objects) {
-            object.draw(batch);
+        for (AbstractCharacter character : characters) {
+            character.draw(batch);
         }
     }
 
@@ -56,8 +69,8 @@ public abstract class AbstractLevel {
         shapeRenderer.setColor(Color.GREEN);
         shapeRenderer.rect(floor.x, floor.y, floor.width, floor.height);
 
-        for (AbstractGameObject object : objects) {
-            object.debug(shapeRenderer);
+        for (AbstractCharacter character : characters) {
+            character.debug(shapeRenderer);
         }
     }
 

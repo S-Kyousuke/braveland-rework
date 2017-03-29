@@ -32,7 +32,7 @@ public class Intro extends AbstractLevel {
 
         player.getAcceleration().y = -1200;
 
-        objects.add(player);
+        characters.add(player);
     }
 
     @Override

@@ -26,7 +26,7 @@ public class Six extends AbstractLevel {
 
         player.getPosition().set(500 ,500);
 
-        objects.add(player);
+        characters.add(player);
     }
 
 

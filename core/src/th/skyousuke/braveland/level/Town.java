@@ -53,12 +53,16 @@ public class Town extends AbstractLevel {
         secondMonster1.getPosition().set(800, 500);
         secondMonster1.setTarget(partner1);
 
-        objects.add(player);
-        objects.add(partner1);
-        objects.add(monster1);
-        objects.add(secondMonster1);
+        characters.add(player);
+        characters.add(partner1);
+        //characters.add(monster1);
 
         partner1.getAiStateMachine().changeState(PartnerAiState.ALERT);
+
+        player.getEnemies().add(partner1);
+        player.getEnemies().add(monster1);
+
+        hotBoxes = player.getHotBoxes(); //TODO
     }
 
     @Override
