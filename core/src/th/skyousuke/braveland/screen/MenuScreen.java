@@ -11,10 +11,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import th.skyousuke.braveland.Assets;
+import th.skyousuke.braveland.utils.Assets;
 
 
-public class MenuScreen extends AbstractGameScreen {
+public class MenuScreen extends AbstractScreen {
 
     private SpriteBatch batch = new SpriteBatch();
     private Viewport viewport = new FitViewport(960, 540);
@@ -59,7 +59,6 @@ public class MenuScreen extends AbstractGameScreen {
                 Gdx.app.exit();
             }
         });
-
 
         Gdx.input.setInputProcessor(uiStage);
     }

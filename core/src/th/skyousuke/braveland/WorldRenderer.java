@@ -1,7 +1,6 @@
 package th.skyousuke.braveland;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -25,30 +24,38 @@ public class WorldRenderer implements Disposable {
 
     public WorldRenderer(WorldController worldController) {
         this.worldController = worldController;
-        shapeRenderer.setColor(Color.RED);
     }
 
     public void render() {
-        Gdx.gl20.glClearColor(0.2f, 0.2f, 0.2f, 1);
+        // clear screen
+        Gdx.gl20.glClearColor(0, 0, 0, 1);
         Gdx.gl20.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
+        // update camera
         uiCamera.update();
         worldController.getCameraHelper().applyTo(camera);
 
+        // game world drawing
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         worldController.getLevel().draw(batch);
         batch.end();
 
-        shapeRenderer.setColor(Color.RED);
         shapeRenderer.setProjectionMatrix(camera.combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         worldController.getLevel().debug(shapeRenderer);
         shapeRenderer.end();
 
+        // ui drawing
         batch.setProjectionMatrix(uiCamera.combined);
-        shapeRenderer.setProjectionMatrix(uiCamera.combined);
-        worldController.getLevel().drawUi(batch, shapeRenderer);
+        batch.begin();
+        worldController.getLevel().drawUi(batch);
+        batch.end();
+
+        shapeRenderer.setProjectionMatrix(camera.combined);
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        worldController.getLevel().debugUi(shapeRenderer);
+        shapeRenderer.end();
     }
 
     public void resize(int width, int height) {

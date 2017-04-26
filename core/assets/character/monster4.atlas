@@ -1,0 +1,97 @@
+
+monster4.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster4_attack
+  rotate: false
+  xy: 2, 6
+  size: 114, 97
+  orig: 121, 112
+  offset: 0, 10
+  index: 3
+monster4_attack
+  rotate: false
+  xy: 118, 2
+  size: 92, 101
+  orig: 129, 107
+  offset: 20, 0
+  index: 4
+monster4_attack
+  rotate: false
+  xy: 212, 4
+  size: 92, 99
+  orig: 116, 108
+  offset: 22, 4
+  index: 5
+monster4_attack
+  rotate: false
+  xy: 306, 6
+  size: 60, 97
+  orig: 114, 108
+  offset: 13, 11
+  index: 2
+monster4_attack
+  rotate: false
+  xy: 492, 11
+  size: 60, 92
+  orig: 121, 103
+  offset: 23, 6
+  index: 1
+monster4_stand
+  rotate: false
+  xy: 554, 11
+  size: 60, 92
+  orig: 61, 92
+  offset: 0, 0
+  index: 1
+monster4_stand
+  rotate: false
+  xy: 616, 11
+  size: 60, 92
+  orig: 61, 92
+  offset: 0, 0
+  index: 4
+monster4_stand
+  rotate: false
+  xy: 802, 12
+  size: 60, 91
+  orig: 61, 92
+  offset: 0, 0
+  index: 2
+monster4_stand
+  rotate: false
+  xy: 864, 12
+  size: 60, 91
+  orig: 61, 92
+  offset: 0, 0
+  index: 3
+monster4_walk
+  rotate: false
+  xy: 368, 9
+  size: 60, 94
+  orig: 61, 94
+  offset: 0, 0
+  index: 2
+monster4_walk
+  rotate: false
+  xy: 430, 9
+  size: 60, 94
+  orig: 61, 94
+  offset: 0, 0
+  index: 4
+monster4_walk
+  rotate: false
+  xy: 678, 11
+  size: 60, 92
+  orig: 61, 94
+  offset: 0, 0
+  index: 1
+monster4_walk
+  rotate: false
+  xy: 740, 11
+  size: 60, 92
+  orig: 61, 94
+  offset: 0, 0
+  index: 3

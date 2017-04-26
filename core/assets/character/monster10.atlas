@@ -1,0 +1,118 @@
+
+monster10.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster10_attack
+  rotate: false
+  xy: 2, 301
+  size: 259, 192
+  orig: 259, 192
+  offset: 0, 0
+  index: 6
+monster10_attack
+  rotate: false
+  xy: 2, 131
+  size: 251, 168
+  orig: 251, 168
+  offset: 0, 0
+  index: 5
+monster10_attack
+  rotate: false
+  xy: 263, 358
+  size: 240, 135
+  orig: 240, 135
+  offset: 0, 0
+  index: 4
+monster10_attack
+  rotate: false
+  xy: 2, 2
+  size: 232, 127
+  orig: 232, 127
+  offset: 0, 0
+  index: 3
+monster10_attack
+  rotate: false
+  xy: 505, 362
+  size: 160, 131
+  orig: 160, 131
+  offset: 0, 0
+  index: 1
+monster10_attack
+  rotate: false
+  xy: 421, 221
+  size: 142, 135
+  orig: 142, 135
+  offset: 0, 0
+  index: 2
+monster10_stand
+  rotate: false
+  xy: 667, 360
+  size: 156, 133
+  orig: 156, 133
+  offset: 0, 0
+  index: 1
+monster10_stand
+  rotate: false
+  xy: 825, 362
+  size: 156, 131
+  orig: 156, 131
+  offset: 0, 0
+  index: 6
+monster10_stand
+  rotate: false
+  xy: 263, 227
+  size: 156, 129
+  orig: 156, 129
+  offset: 0, 0
+  index: 5
+monster10_stand
+  rotate: false
+  xy: 413, 92
+  size: 150, 127
+  orig: 150, 127
+  offset: 0, 0
+  index: 4
+monster10_stand
+  rotate: false
+  xy: 720, 227
+  size: 147, 131
+  orig: 147, 131
+  offset: 0, 0
+  index: 2
+monster10_stand
+  rotate: false
+  xy: 869, 231
+  size: 146, 129
+  orig: 146, 129
+  offset: 0, 0
+  index: 3
+monster10_walk
+  rotate: false
+  xy: 255, 95
+  size: 156, 130
+  orig: 156, 130
+  offset: 0, 0
+  index: 1
+monster10_walk
+  rotate: false
+  xy: 565, 225
+  size: 153, 133
+  orig: 153, 133
+  offset: 0, 0
+  index: 2
+monster10_walk
+  rotate: false
+  xy: 565, 90
+  size: 153, 133
+  orig: 153, 133
+  offset: 0, 0
+  index: 4
+monster10_walk
+  rotate: false
+  xy: 720, 95
+  size: 156, 130
+  orig: 156, 130
+  offset: 0, 0
+  index: 3

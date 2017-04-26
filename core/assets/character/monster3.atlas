@@ -1,0 +1,132 @@
+
+monster3.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster3_walk
+  rotate: false
+  xy: 454, 43
+  size: 104, 83
+  orig: 104, 83
+  offset: 0, 0
+  index: 4
+monster3_walk
+  rotate: false
+  xy: 875, 44
+  size: 103, 82
+  orig: 103, 82
+  offset: 0, 0
+  index: 3
+monster3_walk
+  rotate: false
+  xy: 1190, 45
+  size: 103, 81
+  orig: 103, 81
+  offset: 0, 0
+  index: 5
+monster3_walk
+  rotate: false
+  xy: 1295, 44
+  size: 102, 82
+  orig: 102, 82
+  offset: 0, 0
+  index: 6
+monster3_walk
+  rotate: false
+  xy: 1503, 45
+  size: 101, 81
+  orig: 101, 81
+  offset: 0, 0
+  index: 2
+monster3_walk
+  rotate: false
+  xy: 1606, 43
+  size: 100, 83
+  orig: 100, 83
+  offset: 0, 0
+  index: 1
+monster3_attack
+  rotate: false
+  xy: 2, 2
+  size: 232, 124
+  orig: 232, 124
+  offset: 0, 0
+  index: 5
+monster3_attack
+  rotate: false
+  xy: 236, 25
+  size: 216, 101
+  orig: 216, 101
+  offset: 0, 0
+  index: 6
+monster3_attack
+  rotate: false
+  xy: 1708, 37
+  size: 84, 89
+  orig: 84, 89
+  offset: 0, 0
+  index: 1
+monster3_attack
+  rotate: false
+  xy: 1794, 26
+  size: 68, 100
+  orig: 68, 100
+  offset: 0, 0
+  index: 2
+monster3_attack
+  rotate: false
+  xy: 1864, 24
+  size: 68, 102
+  orig: 68, 102
+  offset: 0, 0
+  index: 3
+monster3_attack
+  rotate: false
+  xy: 1934, 24
+  size: 68, 102
+  orig: 68, 102
+  offset: 0, 0
+  index: 4
+monster3_stand
+  rotate: false
+  xy: 560, 43
+  size: 103, 83
+  orig: 103, 83
+  offset: 0, 0
+  index: 1
+monster3_stand
+  rotate: false
+  xy: 665, 43
+  size: 103, 83
+  orig: 103, 83
+  offset: 0, 0
+  index: 5
+monster3_stand
+  rotate: false
+  xy: 770, 42
+  size: 103, 84
+  orig: 103, 84
+  offset: 0, 0
+  index: 6
+monster3_stand
+  rotate: false
+  xy: 980, 44
+  size: 103, 82
+  orig: 103, 82
+  offset: 0, 0
+  index: 2
+monster3_stand
+  rotate: false
+  xy: 1085, 44
+  size: 103, 82
+  orig: 103, 82
+  offset: 0, 0
+  index: 4
+monster3_stand
+  rotate: false
+  xy: 1399, 45
+  size: 102, 81
+  orig: 102, 81
+  offset: 0, 0
+  index: 3

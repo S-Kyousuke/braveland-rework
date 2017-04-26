@@ -1,0 +1,139 @@
+
+monster7.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster7_attack
+  rotate: false
+  xy: 2, 2
+  size: 84, 114
+  orig: 84, 114
+  offset: 0, 0
+  index: 5
+monster7_attack
+  rotate: false
+  xy: 88, 4
+  size: 84, 112
+  orig: 84, 112
+  offset: 0, 0
+  index: 4
+monster7_attack
+  rotate: false
+  xy: 174, 8
+  size: 87, 108
+  orig: 87, 108
+  offset: 0, 0
+  index: 3
+monster7_attack
+  rotate: false
+  xy: 263, 39
+  size: 113, 77
+  orig: 113, 77
+  offset: 0, 0
+  index: 6
+monster7_attack
+  rotate: false
+  xy: 827, 46
+  size: 113, 70
+  orig: 113, 70
+  offset: 0, 0
+  index: 7
+monster7_attack
+  rotate: false
+  xy: 1576, 42
+  size: 102, 74
+  orig: 102, 74
+  offset: 0, 0
+  index: 1
+monster7_attack
+  rotate: false
+  xy: 1884, 38
+  size: 91, 78
+  orig: 91, 78
+  offset: 0, 0
+  index: 2
+monster7_stand
+  rotate: false
+  xy: 603, 37
+  size: 109, 79
+  orig: 109, 79
+  offset: 0, 0
+  index: 2
+monster7_stand
+  rotate: false
+  xy: 1050, 37
+  size: 104, 79
+  orig: 104, 79
+  offset: 0, 0
+  index: 1
+monster7_stand
+  rotate: false
+  xy: 1263, 38
+  size: 104, 78
+  orig: 104, 78
+  offset: 0, 0
+  index: 3
+monster7_stand
+  rotate: false
+  xy: 1369, 39
+  size: 102, 77
+  orig: 102, 77
+  offset: 0, 0
+  index: 4
+monster7_walk
+  rotate: false
+  xy: 378, 39
+  size: 111, 77
+  orig: 111, 77
+  offset: 0, 0
+  index: 3
+monster7_walk
+  rotate: false
+  xy: 491, 38
+  size: 110, 78
+  orig: 110, 78
+  offset: 0, 0
+  index: 2
+monster7_walk
+  rotate: false
+  xy: 714, 40
+  size: 111, 76
+  orig: 111, 76
+  offset: 0, 0
+  index: 4
+monster7_walk
+  rotate: false
+  xy: 942, 37
+  size: 106, 79
+  orig: 106, 79
+  offset: 0, 0
+  index: 1
+monster7_walk
+  rotate: false
+  xy: 1156, 38
+  size: 105, 78
+  orig: 105, 78
+  offset: 0, 0
+  index: 8
+monster7_walk
+  rotate: false
+  xy: 1473, 37
+  size: 101, 79
+  orig: 101, 79
+  offset: 0, 0
+  index: 7
+monster7_walk
+  rotate: false
+  xy: 1680, 43
+  size: 102, 73
+  orig: 102, 73
+  offset: 0, 0
+  index: 5
+monster7_walk
+  rotate: false
+  xy: 1784, 40
+  size: 98, 76
+  orig: 98, 76
+  offset: 0, 0
+  index: 6

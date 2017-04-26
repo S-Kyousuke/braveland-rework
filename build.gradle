@@ -11,11 +11,15 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.sonarqube" version "2.3"
+}
+
 allprojects {
     apply plugin: "eclipse"
     apply plugin: "idea"
 
-    version = '1.0'
+    version = '1.1'
     ext {
         appName = "brave-land"
         gdxVersion = '1.9.6'
@@ -70,4 +74,17 @@ project(":core") {
 
 tasks.eclipse.doLast {
     delete ".project"
+}
+
+apply plugin: "org.sonarqube"
+
+sonarqube {
+    properties {
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.projectName", "Brave Land Rework"
+        property "sonar.projectKey", "th.skyousuke.braveland"
+        property "sonar.sources", "core/src"
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.projectVersion", version
+    }
 }

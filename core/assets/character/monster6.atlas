@@ -1,0 +1,97 @@
+
+monster6.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster6_attack
+  rotate: false
+  xy: 2, 410
+  size: 217, 96
+  orig: 268, 191
+  offset: 47, 3
+  index: 5
+monster6_attack
+  rotate: false
+  xy: 221, 410
+  size: 220, 96
+  orig: 229, 191
+  offset: 8, 3
+  index: 6
+monster6_attack
+  rotate: false
+  xy: 206, 191
+  size: 210, 108
+  orig: 267, 192
+  offset: 50, 2
+  index: 4
+monster6_attack
+  rotate: false
+  xy: 2, 84
+  size: 129, 109
+  orig: 179, 191
+  offset: 0, 3
+  index: 1
+monster6_attack
+  rotate: false
+  xy: 239, 2
+  size: 132, 187
+  orig: 228, 191
+  offset: 47, 4
+  index: 2
+monster6_attack
+  rotate: false
+  xy: 373, 2
+  size: 105, 187
+  orig: 179, 192
+  offset: 1, 4
+  index: 3
+monster6_stand
+  rotate: false
+  xy: 239, 301
+  size: 100, 107
+  orig: 101, 108
+  offset: 0, 1
+  index: 1
+monster6_stand
+  rotate: false
+  xy: 341, 301
+  size: 100, 107
+  orig: 101, 108
+  offset: 0, 1
+  index: 2
+monster6_stand
+  rotate: false
+  xy: 2, 195
+  size: 100, 107
+  orig: 202, 107
+  offset: 0, 0
+  index: 3
+monster6_walk
+  rotate: false
+  xy: 2, 304
+  size: 112, 104
+  orig: 122, 112
+  offset: 9, 1
+  index: 2
+monster6_walk
+  rotate: false
+  xy: 116, 304
+  size: 121, 104
+  orig: 122, 111
+  offset: 0, 0
+  index: 4
+monster6_walk
+  rotate: false
+  xy: 104, 195
+  size: 100, 107
+  orig: 122, 111
+  offset: 21, 0
+  index: 3
+monster6_walk
+  rotate: false
+  xy: 133, 78
+  size: 104, 111
+  orig: 122, 112
+  offset: 17, 1
+  index: 1

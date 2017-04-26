@@ -2,7 +2,10 @@ package th.skyousuke.braveland;
 
 
 public enum ViewDirection {
-
     LEFT,
-    RIGHT
+    RIGHT;
+
+    public ViewDirection getOpposite() {
+        return this == LEFT ? RIGHT : LEFT;
+    }
 }

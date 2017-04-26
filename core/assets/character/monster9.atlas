@@ -1,0 +1,118 @@
+
+monster9.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster9_attack
+  rotate: false
+  xy: 2, 315
+  size: 284, 192
+  orig: 284, 192
+  offset: 0, 0
+  index: 6
+monster9_attack
+  rotate: false
+  xy: 2, 145
+  size: 275, 168
+  orig: 275, 168
+  offset: 0, 0
+  index: 5
+monster9_attack
+  rotate: false
+  xy: 288, 366
+  size: 264, 141
+  orig: 264, 141
+  offset: 0, 0
+  index: 4
+monster9_attack
+  rotate: false
+  xy: 2, 2
+  size: 256, 141
+  orig: 256, 141
+  offset: 0, 0
+  index: 3
+monster9_attack
+  rotate: false
+  xy: 730, 369
+  size: 174, 138
+  orig: 174, 138
+  offset: 0, 0
+  index: 1
+monster9_attack
+  rotate: false
+  xy: 456, 213
+  size: 142, 151
+  orig: 142, 151
+  offset: 0, 0
+  index: 2
+monster9_stand
+  rotate: false
+  xy: 554, 367
+  size: 174, 140
+  orig: 174, 140
+  offset: 0, 0
+  index: 1
+monster9_stand
+  rotate: false
+  xy: 906, 369
+  size: 174, 138
+  orig: 174, 138
+  offset: 0, 0
+  index: 6
+monster9_stand
+  rotate: false
+  xy: 1434, 371
+  size: 174, 136
+  orig: 174, 136
+  offset: 0, 0
+  index: 5
+monster9_stand
+  rotate: false
+  xy: 288, 230
+  size: 166, 134
+  orig: 166, 134
+  offset: 0, 0
+  index: 4
+monster9_stand
+  rotate: false
+  xy: 279, 90
+  size: 165, 138
+  orig: 165, 138
+  offset: 0, 0
+  index: 2
+monster9_stand
+  rotate: false
+  xy: 600, 229
+  size: 164, 136
+  orig: 164, 136
+  offset: 0, 0
+  index: 3
+monster9_walk
+  rotate: false
+  xy: 1082, 370
+  size: 174, 137
+  orig: 174, 137
+  offset: 0, 0
+  index: 1
+monster9_walk
+  rotate: false
+  xy: 1258, 370
+  size: 174, 137
+  orig: 174, 137
+  offset: 0, 0
+  index: 3
+monster9_walk
+  rotate: false
+  xy: 1610, 367
+  size: 171, 140
+  orig: 171, 140
+  offset: 0, 0
+  index: 2
+monster9_walk
+  rotate: false
+  xy: 1783, 367
+  size: 171, 140
+  orig: 171, 140
+  offset: 0, 0
+  index: 4

@@ -1,0 +1,195 @@
+
+monster12.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster12_attack
+  rotate: false
+  xy: 2, 749
+  size: 223, 268
+  orig: 223, 268
+  offset: 0, 0
+  index: 5
+monster12_attack
+  rotate: false
+  xy: 2, 473
+  size: 215, 274
+  orig: 215, 274
+  offset: 0, 0
+  index: 9
+monster12_attack
+  rotate: false
+  xy: 227, 754
+  size: 222, 263
+  orig: 222, 263
+  offset: 0, 0
+  index: 4
+monster12_attack
+  rotate: false
+  xy: 2, 198
+  size: 212, 273
+  orig: 212, 273
+  offset: 0, 0
+  index: 6
+monster12_attack
+  rotate: false
+  xy: 451, 749
+  size: 215, 268
+  orig: 215, 268
+  offset: 0, 0
+  index: 7
+monster12_attack
+  rotate: false
+  xy: 668, 748
+  size: 214, 269
+  orig: 214, 269
+  offset: 0, 0
+  index: 8
+monster12_attack
+  rotate: false
+  xy: 884, 771
+  size: 222, 246
+  orig: 222, 246
+  offset: 0, 0
+  index: 3
+monster12_attack
+  rotate: false
+  xy: 1108, 785
+  size: 212, 232
+  orig: 212, 232
+  offset: 0, 0
+  index: 2
+monster12_attack
+  rotate: false
+  xy: 1322, 807
+  size: 209, 210
+  orig: 209, 210
+  offset: 0, 0
+  index: 11
+monster12_attack
+  rotate: false
+  xy: 1533, 812
+  size: 208, 205
+  orig: 208, 205
+  offset: 0, 0
+  index: 10
+monster12_attack
+  rotate: false
+  xy: 1743, 814
+  size: 203, 203
+  orig: 203, 203
+  offset: 0, 0
+  index: 12
+monster12_attack
+  rotate: false
+  xy: 219, 547
+  size: 180, 200
+  orig: 180, 200
+  offset: 0, 0
+  index: 13
+monster12_attack
+  rotate: false
+  xy: 770, 555
+  size: 180, 191
+  orig: 180, 191
+  offset: 0, 0
+  index: 1
+monster12_stand
+  rotate: false
+  xy: 770, 555
+  size: 180, 191
+  orig: 180, 191
+  offset: 0, 0
+  index: 1
+monster12_stand
+  rotate: false
+  xy: 190, 2
+  size: 184, 194
+  orig: 184, 194
+  offset: 0, 0
+  index: 2
+monster12_stand
+  rotate: false
+  xy: 587, 554
+  size: 181, 192
+  orig: 181, 192
+  offset: 0, 0
+  index: 6
+monster12_stand
+  rotate: false
+  xy: 219, 364
+  size: 185, 181
+  orig: 185, 181
+  offset: 0, 0
+  index: 3
+monster12_stand
+  rotate: false
+  xy: 585, 364
+  size: 177, 188
+  orig: 177, 188
+  offset: 0, 0
+  index: 5
+monster12_stand
+  rotate: false
+  xy: 952, 397
+  size: 180, 180
+  orig: 180, 180
+  offset: 0, 0
+  index: 4
+monster12_walk
+  rotate: false
+  xy: 2, 2
+  size: 186, 194
+  orig: 186, 194
+  offset: 0, 0
+  index: 7
+monster12_walk
+  rotate: false
+  xy: 401, 555
+  size: 184, 192
+  orig: 184, 192
+  offset: 0, 0
+  index: 2
+monster12_walk
+  rotate: false
+  xy: 952, 579
+  size: 181, 190
+  orig: 181, 190
+  offset: 0, 0
+  index: 6
+monster12_walk
+  rotate: false
+  xy: 1135, 594
+  size: 180, 189
+  orig: 180, 189
+  offset: 0, 0
+  index: 1
+monster12_walk
+  rotate: false
+  xy: 406, 363
+  size: 177, 190
+  orig: 177, 190
+  offset: 0, 0
+  index: 8
+monster12_walk
+  rotate: false
+  xy: 1322, 623
+  size: 185, 182
+  orig: 185, 182
+  offset: 0, 0
+  index: 3
+monster12_walk
+  rotate: false
+  xy: 1509, 622
+  size: 180, 183
+  orig: 180, 183
+  offset: 0, 0
+  index: 4
+monster12_walk
+  rotate: false
+  xy: 1691, 622
+  size: 177, 188
+  orig: 177, 188
+  offset: 0, 0
+  index: 5
