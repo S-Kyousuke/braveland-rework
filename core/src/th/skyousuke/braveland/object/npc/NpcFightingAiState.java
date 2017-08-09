@@ -99,7 +99,6 @@ public enum NpcFightingAiState implements State<AbstractNpc> {
         }
     }
 
-
     @Override
     public void enter(AbstractNpc partner) {
         // default implementation does nothing
@@ -114,6 +113,4 @@ public enum NpcFightingAiState implements State<AbstractNpc> {
     public boolean onMessage(AbstractNpc partner, Telegram telegram) {
         return false;
     }
-
-
 }

@@ -8,11 +8,9 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 import th.skyousuke.braveland.DamageNumber;
 import th.skyousuke.braveland.HotBox;
-import th.skyousuke.braveland.object.AbstractCharacter;
-import th.skyousuke.braveland.object.AbstractGameObject;
-import th.skyousuke.braveland.object.AbstractLevelObject;
-import th.skyousuke.braveland.object.CharacterListener;
-import th.skyousuke.braveland.object.ObstacleAware;
+import th.skyousuke.braveland.object.*;
+import th.skyousuke.braveland.object.npc.partner.Partner;
+import th.skyousuke.braveland.object.player.Player;
 import th.skyousuke.braveland.object.player.PlayerChangeListener;
 import th.skyousuke.braveland.utils.Assets;
 import th.skyousuke.braveland.utils.CameraHelper;
@@ -90,7 +88,7 @@ public abstract class AbstractLevel implements CharacterListener {
         objects.clear();
         damageNumbers.clear();
 
-        cameraHelper.setLevelDimension(getWidth(), getHeight());
+        cameraHelper.setCameraBound(getWidth(), getHeight());
     }
 
     public void draw(SpriteBatch batch) {
@@ -189,6 +187,25 @@ public abstract class AbstractLevel implements CharacterListener {
     }
 
     public void addCharacter(AbstractCharacter character, float positionX, float positionY) {
+
+        //TODO: BAD CODE for testing only >_<
+        for (int i = 0; i < characters.size; ++i)  {
+            AbstractCharacter existingCharacter = characters.get(i);
+
+            boolean friendlyExistingCharacter = (existingCharacter instanceof Player || existingCharacter instanceof Partner);
+            boolean friendlyCharacter = (character instanceof Player || character instanceof Partner);
+
+            if (friendlyCharacter != friendlyExistingCharacter ) {
+                character.getEnemies().add(existingCharacter);
+                existingCharacter.getEnemies().add(character);
+            } else {
+                character.getAllies().add(existingCharacter);
+                existingCharacter.getAllies().add(character);
+            }
+
+        }
+        /* end of BAD CODE */
+
         characters.add(character);
 
         character.setListener(this);
@@ -224,5 +241,9 @@ public abstract class AbstractLevel implements CharacterListener {
                 otherCharacter.setTarget(null);
             }
         }
+    }
+
+    public Array<AbstractCharacter> getCharacters() {
+        return characters;
     }
 }

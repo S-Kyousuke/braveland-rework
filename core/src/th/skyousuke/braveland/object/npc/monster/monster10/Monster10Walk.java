@@ -28,7 +28,7 @@ public class Monster10Walk extends AbstractActionState {
     @Override
     protected void onActionUpdate(AbstractCharacter monster10) {
         if (CompareUtils.floatEquals(monster10.getVelocity().x, 0)) {
-            //monster10.getActionStateMachine().changeState(new Monster10Stand());
+            monster10.getActionStateMachine().changeState(new Monster10Stand());
         }
     }
 }

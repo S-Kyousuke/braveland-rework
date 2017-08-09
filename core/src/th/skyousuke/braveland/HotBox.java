@@ -37,7 +37,7 @@ public class HotBox {
 
     public HotBox(float relativeX, float relativeY, float width, float height, Damage damage) {
         initRelativeX = relativeX;
-        initKnockBackDirection = damage.knockBackDirection;
+        initKnockBackDirection = damage.getKnockBackDirection();
 
         this.relativeY = relativeY;
         this.damage = damage;
@@ -74,10 +74,10 @@ public class HotBox {
     public void setFlipX(boolean flipX, float flipXOffset) {
         if (flipX) {
             relativeX = flipXOffset - box.width - initRelativeX;
-            damage.knockBackDirection = initKnockBackDirection.getOpposite();
+            damage.setKnockBackDirection(initKnockBackDirection.getOpposite());
         } else {
             relativeX = initRelativeX;
-            damage.knockBackDirection = initKnockBackDirection;
+            damage.setKnockBackDirection(initKnockBackDirection);
         }
     }
 
@@ -87,20 +87,21 @@ public class HotBox {
 
     public void update(float deltaTime) {
         lifespan += deltaTime;
-        final int targetCount = targets.size;
-        for (int i = 0; i < targetCount; i++) {
-            final AbstractCharacter target = targets.get(i);
-            if (!box.overlaps(target.getHitBox()))
+        for (final AbstractCharacter target : targets) {
+            if (!target.isAlive()) {
+                targets.removeValue(target, true);
                 continue;
-            HotBoxStatistics statistics = allStatistics.get(target);
-            if (statistics == null && allStatistics.size < maxTarget) {
-                statistics = new HotBoxStatistics();
-                allStatistics.put(target, statistics);
-                hit(target, statistics);
-            } else if (statistics != null
-                    && (lifespan - statistics.lastHitTime >= hitInterval)
-                    && (statistics.hitCount < maxHitPerTarget)) {
-                hit(target, statistics);
+            }
+            if (box.overlaps(target.getHitBox())) {
+                HotBoxStatistics statistics = allStatistics.get(target);
+                if (statistics == null && allStatistics.size < maxTarget) {
+                    statistics = new HotBoxStatistics();
+                    allStatistics.put(target, statistics);
+                    hit(target, statistics);
+                } else if (statistics != null && (lifespan - statistics.lastHitTime >= hitInterval)
+                        && (statistics.hitCount < maxHitPerTarget)) {
+                    hit(target, statistics);
+                }
             }
         }
     }

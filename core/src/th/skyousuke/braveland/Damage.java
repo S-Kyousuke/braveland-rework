@@ -6,10 +6,10 @@ import th.skyousuke.braveland.utils.Assets;
 
 public class Damage {
 
-    public float value;
-    public float knockBackSpeed;
-    public ViewDirection knockBackDirection;
-    public Sound hitSound;
+    private float value;
+    private float knockBackSpeed;
+    private ViewDirection knockBackDirection;
+    private Sound hitSound;
 
     public Damage() {
         this(0);
@@ -27,6 +27,38 @@ public class Damage {
         this.value = value;
         this.knockBackSpeed = knockBackSpeed;
         this.knockBackDirection = knockBackDirection;
+        this.hitSound = hitSound;
+    }
+
+    public float getValue() {
+        return value;
+    }
+
+    public void setValue(float value) {
+        this.value = value;
+    }
+
+    public float getKnockBackSpeed() {
+        return knockBackSpeed;
+    }
+
+    public void setKnockBackSpeed(float knockBackSpeed) {
+        this.knockBackSpeed = knockBackSpeed;
+    }
+
+    public ViewDirection getKnockBackDirection() {
+        return knockBackDirection;
+    }
+
+    public void setKnockBackDirection(ViewDirection knockBackDirection) {
+        this.knockBackDirection = knockBackDirection;
+    }
+
+    public Sound getHitSound() {
+        return hitSound;
+    }
+
+    public void setHitSound(Sound hitSound) {
         this.hitSound = hitSound;
     }
 }

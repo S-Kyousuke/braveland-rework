@@ -30,7 +30,7 @@ public class Intro extends AbstractLevel {
         player.getPosition().set(0, 200);
 
         cameraHelper.setTarget(player);
-        cameraHelper.setLevelDimension(getWidth(), getHeight());
+        cameraHelper.setCameraBound(getWidth(), getHeight());
         cameraHelper.setPositionToTarget();
     }
 

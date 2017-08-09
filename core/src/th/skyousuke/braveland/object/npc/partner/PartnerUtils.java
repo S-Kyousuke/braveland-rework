@@ -13,7 +13,7 @@ public class PartnerUtils {
     }
 
     public static Partner makeRandomPartner() {
-        int partnerNumber = MathUtils.random(1, 5);
+        final int partnerNumber = MathUtils.random(1, 5);
 
         switch (partnerNumber) {
             case 1:
@@ -26,8 +26,9 @@ public class PartnerUtils {
                 return new Partner4();
             case 5:
                 return new Partner5();
+            default:
+                return null;
         }
-        throw new RuntimeException("Invalid partner number!");
     }
 
 

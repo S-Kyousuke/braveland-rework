@@ -22,6 +22,14 @@ public class Partner5 extends Partner {
         getActionStateMachine().changeState(new Partner5SpecialAttack());
     }
 
+    public void specialAttack2() {
+        getActionStateMachine().changeState(new Partner5SpecialAttack2());
+    }
+
+    public void heal() {
+        getActionStateMachine().changeState(new Partner5Heal());
+    }
+
     @Override
     protected void changeStateDueToTakingDamage() {
         getActionStateMachine().changeState(new Partner5Walk());

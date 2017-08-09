@@ -59,7 +59,6 @@ public class MenuScreen extends AbstractScreen {
                 Gdx.app.exit();
             }
         });
-
         Gdx.input.setInputProcessor(uiStage);
     }
 

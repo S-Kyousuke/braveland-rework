@@ -146,11 +146,11 @@ public abstract class AbstractActionState implements State<AbstractCharacter> {
     }
 
     private class KeyFrameData {
-        public TextureRegion region;
-        public float offsetX;
-        public float offsetY;
-        public float hitBoxWidth;
-        public float hitBoxHeight;
-        public Array<HotBox> hotBoxes = new Array<>();
+        private TextureRegion region;
+        private float offsetX;
+        private float offsetY;
+        private float hitBoxWidth;
+        private float hitBoxHeight;
+        private Array<HotBox> hotBoxes = new Array<>();
     }
 }

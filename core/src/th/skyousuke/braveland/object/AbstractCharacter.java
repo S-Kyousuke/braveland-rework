@@ -214,50 +214,28 @@ public abstract class AbstractCharacter extends AbstractGameObject implements Ob
     }
 
     public void takeDamage(Damage damage) {
-        health = Math.max(0, health - damage.value);
+        health = Math.max(0, health - damage.getValue());
         if (CompareUtils.floatEquals(health, 0)) {
             alive = false;
             if (listener != null)
                 listener.onCharacterDead(this);
         }
 
-        if (!CompareUtils.floatEquals(damage.knockBackSpeed, 0)) {
+        if (!CompareUtils.floatEquals(damage.getKnockBackSpeed(), 0)) {
             knockingBack = true;
             changeStateDueToTakingDamage();
-            if (damage.knockBackDirection == ViewDirection.RIGHT) {
-                getVelocity().x = damage.knockBackSpeed;
+            if (damage.getKnockBackDirection() == ViewDirection.RIGHT) {
+                getVelocity().x = damage.getKnockBackSpeed();
             } else {
-                getVelocity().x = -damage.knockBackSpeed;
+                getVelocity().x = -damage.getKnockBackSpeed();
             }
         }
 
-        damage.hitSound.play();
+        damage.getHitSound().play();
 
         if (listener != null)
-            listener.onCharacterTakeDamage(this, damage.value);
+            listener.onCharacterTakeDamage(this, damage.getValue());
     }
-
-//    public void takeDamage(float damage, float knockBackSpeed, ViewDirection knockBackDirection) {
-//        health = Math.max(0, health - damage);
-//        if (CompareUtils.floatEquals(health, 0)) {
-//            alive = false;
-//            if (listener != null)
-//                listener.onCharacterDead(this);
-//        }
-//
-//        if (listener != null)
-//            listener.onCharacterTakeDamage(this, damage);
-//
-//        if (knockBackDirection != null) {
-//            knockingBack = true;
-//            changeStateDueToTakingDamage();
-//            if (knockBackDirection == ViewDirection.RIGHT) {
-//                getVelocity().x = knockBackSpeed;
-//            } else {
-//                getVelocity().x = -knockBackSpeed;
-//            }
-//        }
-//    }
 
     protected abstract void changeStateDueToTakingDamage();
 
@@ -281,6 +259,7 @@ public abstract class AbstractCharacter extends AbstractGameObject implements Ob
         return onGround;
     }
 
+    @Override
     public Array<Rectangle> getObstacleBoxes() {
         return obstacleBoxes;
     }
@@ -393,4 +372,11 @@ public abstract class AbstractCharacter extends AbstractGameObject implements Ob
         return targetCenterX - centerX;
     }
 
+    public boolean isAlive() {
+        return alive;
+    }
+
+    public void setHealth(float health) {
+        this.health = health;
+    }
 }

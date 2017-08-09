@@ -1,11 +1,10 @@
 package th.skyousuke.braveland;
 
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import th.skyousuke.braveland.level.AbstractLevel;
 import th.skyousuke.braveland.level.Level;
 import th.skyousuke.braveland.level.LevelListener;
+import th.skyousuke.braveland.object.AbstractCharacter;
 import th.skyousuke.braveland.object.player.Player;
 import th.skyousuke.braveland.object.player.PlayerChangeListener;
 import th.skyousuke.braveland.utils.CameraHelper;
@@ -17,7 +16,7 @@ public class WorldController implements PlayerChangeListener, LevelListener {
     private Level currentLevel;
     private Level nextLevel;
 
-    private Player player;
+    private AbstractCharacter player;
 
     public WorldController() {
         setLevel(Level.INTRO);
@@ -58,31 +57,23 @@ public class WorldController implements PlayerChangeListener, LevelListener {
 
     // TODO: for debug only. should be remove in production code.
     private void handleInput() {
-        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
-            setLevel(currentLevel.getNext());
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_4)) {
-            currentLevel.getLevel().onSpecialKeyPressed(0);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_5)) {
-            currentLevel.getLevel().onSpecialKeyPressed(1);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_6)) {
-            currentLevel.getLevel().onSpecialKeyPressed(2);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_7)) {
-            currentLevel.getLevel().onSpecialKeyPressed(3);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_8)) {
-            currentLevel.getLevel().onSpecialKeyPressed(4);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_9)) {
-            currentLevel.getLevel().onSpecialKeyPressed(5);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_0)) {
-            currentLevel.getLevel().onSpecialKeyPressed(6);
-        }
-
-        if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_1)) {
-            cameraHelper.addZoom(-0.1f);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_2)) {
-            cameraHelper.addZoom(0.1f);
-        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_3)) {
-            cameraHelper.setZoom(1f);
-        }
+//        if (Gdx.input.isKeyJustPressed(Input.Keys.ENTER)) {
+//            setLevel(currentLevel.getNext());
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_4)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(0);
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_5)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(1);
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_6)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(2);
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_7)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(3);
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_8)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(4);
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_9)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(5);
+//        } else if (Gdx.input.isKeyJustPressed(Input.Keys.NUM_0)) {
+//            currentLevel.getLevel().onSpecialKeyPressed(6);
+//        }
     }
 
     public AbstractLevel getLevel() {
@@ -101,5 +92,9 @@ public class WorldController implements PlayerChangeListener, LevelListener {
 
     public void skipIntro() {
         setLevel(Level.TOWN);
+    }
+
+    public AbstractCharacter getPlayer() {
+        return player;
     }
 }

@@ -10,7 +10,7 @@ public class BraveLand extends Game {
     public void create() {
         Assets.instance.init();
         Assets.instance.music.setLooping(true);
-        Assets.instance.music.play();
+        //Assets.instance.music.play();
 
         setScreen(new MenuScreen(this));
     }

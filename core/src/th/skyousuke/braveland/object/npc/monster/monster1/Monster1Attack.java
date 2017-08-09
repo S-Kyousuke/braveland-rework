@@ -2,7 +2,6 @@ package th.skyousuke.braveland.object.npc.monster.monster1;
 
 
 import com.badlogic.gdx.graphics.g2d.Animation;
-
 import th.skyousuke.braveland.Damage;
 import th.skyousuke.braveland.HotBox;
 import th.skyousuke.braveland.ViewDirection;
@@ -12,7 +11,7 @@ import th.skyousuke.braveland.utils.Assets;
 
 public class Monster1Attack extends AbstractActionState {
 
-    private static final float BASE_FRAME_DURATION = 0.3f;
+    private static final float BASE_FRAME_DURATION = 0.25f;
 
     public Monster1Attack() {
         super(Assets.instance.monster1Atlas, "monster1_atk", 5, Animation.PlayMode.NORMAL, 21, -42);
@@ -37,12 +36,8 @@ public class Monster1Attack extends AbstractActionState {
         HotBox hotBoxFrame2 = new HotBox(55, 5, 30, 30, new Damage(0.25f * monster1.getDamage(), 150f, ViewDirection.RIGHT));
         hotBoxFrame2.getTargets().addAll(monster1.getEnemies());
 
-        HotBox hotBoxFrame3 = new HotBox(10, 8, 65, 13, new Damage(0.25f * monster1.getDamage(), 150f, ViewDirection.LEFT));
-        hotBoxFrame3.getTargets().addAll(monster1.getEnemies());
-
         addHotBox(1, hotBoxFrame1);
         addHotBox(2, hotBoxFrame2);
-        addHotBox(3, hotBoxFrame3);
     }
 
     @Override

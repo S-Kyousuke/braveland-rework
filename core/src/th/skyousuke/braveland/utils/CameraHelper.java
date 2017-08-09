@@ -7,20 +7,31 @@ import th.skyousuke.braveland.object.AbstractGameObject;
 
 public class CameraHelper {
 
-    private static final float MAX_ZOOM_OUT = 1.35f;
-    private static final float MAX_ZOOM_IN = 0.2f;
-
     private final Vector2 position = new Vector2();
+
+    public static final float MIN_SPEED = 0.01f;
+    public static final float MAX_SPEED = 1f;
+
     private float zoom = 1.0f;
+    private float speed = 0.1f;
+
+    private float leftMost;
+    private float rightMost;
+    private float topMost;
+    private float bottomMost;
+
     private AbstractGameObject target;
 
-    private float levelWidth;
-    private float levelHeight;
 
+    public void setCameraBound(float levelWidth, float levelHeight) {
+        leftMost = 0;
+        bottomMost = 0;
+        rightMost= levelWidth;
+        topMost = levelHeight;
+    }
 
-    public void setLevelDimension(float levelWidth, float levelHeight) {
-        this.levelWidth = levelWidth;
-        this.levelHeight = levelHeight;
+    public void setSpeed(float speed) {
+        this.speed = MathUtils.clamp(speed, MIN_SPEED, MAX_SPEED);
     }
 
     public void setPosition(float x, float y) {
@@ -44,11 +55,22 @@ public class CameraHelper {
     }
 
     public void setZoom(float zoom) {
-        this.zoom = MathUtils.clamp(zoom, MAX_ZOOM_IN, MAX_ZOOM_OUT);
+        this.zoom = zoom;
     }
 
     public void applyTo(OrthographicCamera camera) {
-        keepInLevel(camera);
+
+        final float halfViewportWidth = camera.viewportWidth * 0.5f;
+        final float halfViewportHeight = camera.viewportHeight * 0.5f;
+        final float maxHorizontalZoom = (rightMost - leftMost) / (halfViewportWidth * 2);
+        final float maxVerticalZoom = (topMost - bottomMost) / (halfViewportHeight * 2);
+
+        final float maxZoom = Math.min(maxHorizontalZoom, maxVerticalZoom);
+        final float minZoom = 0.01f;
+        zoom = MathUtils.clamp(zoom, minZoom, maxZoom);
+
+        keepInLevel(halfViewportWidth, halfViewportHeight);
+
         camera.position.x = position.x;
         camera.position.y = position.y;
         camera.zoom = zoom;
@@ -75,9 +97,9 @@ public class CameraHelper {
         if (!hasTarget())
             return;
 
-        final float alpha = 0.1f;
-        position.x += (target.getPosition().x + target.getOrigin().x - position.x) * alpha;
-        position.y += (target.getPosition().y + target.getOrigin().y - position.y) * alpha;
+
+        position.x += (target.getPosition().x + target.getOrigin().x - position.x) * speed;
+        position.y += (target.getPosition().y + target.getOrigin().y - position.y) * speed;
     }
 
     public void setPositionToTarget() {
@@ -87,19 +109,16 @@ public class CameraHelper {
         }
     }
 
-    private void keepInLevel(OrthographicCamera camera) {
-        final float halfCameraWidth = camera.viewportWidth * 0.5f;
-        final float halfCameraHeight = camera.viewportHeight * 0.5f;
+    private void keepInLevel(float halfViewportWidth, float halfViewportHeight) {
+        if (position.x > rightMost - halfViewportWidth * zoom) {
+            position.x = rightMost - halfViewportWidth * zoom;
+        } else if (position.x < leftMost + halfViewportWidth * zoom)
+            position.x = leftMost + halfViewportWidth * zoom;
 
-        if (position.x > levelWidth - halfCameraWidth * zoom) {
-            position.x = levelWidth - halfCameraWidth * zoom;
-        } else if (position.x < halfCameraWidth * zoom)
-            position.x = halfCameraWidth * zoom;
-
-        if (position.y > levelHeight - halfCameraHeight * zoom)
-            position.y = levelHeight - halfCameraHeight * zoom;
-        else if (position.y < halfCameraHeight * zoom)
-            position.y = halfCameraHeight * zoom;
+        if (position.y > topMost - halfViewportHeight * zoom)
+            position.y = topMost - halfViewportHeight * zoom;
+        else if (position.y < bottomMost + halfViewportHeight * zoom)
+            position.y = bottomMost + halfViewportHeight * zoom;
     }
 
 }

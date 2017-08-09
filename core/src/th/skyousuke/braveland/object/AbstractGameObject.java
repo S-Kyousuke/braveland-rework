@@ -18,12 +18,6 @@ public abstract class AbstractGameObject {
     }
 
     public void update(float deltaTime) {
-        // update position
-        position.x += velocity.x * deltaTime;
-        onAfterMoveX();
-
-        position.y += velocity.y * deltaTime;
-        onAfterMoveY();
 
         // update velocity due to acceleration (or gravity)
         velocity.x += acceleration.x * deltaTime;
@@ -41,6 +35,13 @@ public abstract class AbstractGameObject {
         } else if (velocity.y < 0) {
             velocity.y = Math.min(velocity.y + friction.y * deltaTime, 0);
         }
+
+        // update position
+        position.x += velocity.x * deltaTime;
+        onAfterMoveX();
+
+        position.y += velocity.y * deltaTime;
+        onAfterMoveY();
     }
 
     public Vector2 getPosition() {
@@ -80,4 +81,8 @@ public abstract class AbstractGameObject {
         shapeRenderer.rect(position.x, position.y, origin.x * 2, origin.y * 2);
     }
 
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
